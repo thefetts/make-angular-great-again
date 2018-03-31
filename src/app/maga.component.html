@@ -1,13 +1,19 @@
 <div id="container">
   <h1>~ Welcome to the Castle Black! ~</h1>
-  <h4>Greetings from our {{getLeaderTitle()}}</h4>
+  <h4>Greetings from our Lord Commander {{getLeader().name}}</h4>
 
   <h3>~ Our Home ~</h3>
   <img id="castle" src="assets/castleblack.jpg"/>
 
   <h3>~ Our Team ~</h3>
   <ul>
-    <li *ngFor="let member of roster">{{member.title}}: {{member.name}}</li>
+    <maga-episode-picker (updateRoles)="onUpdateRoles($event)"></maga-episode-picker>
+    <li *ngFor="let member of roster">
+      {{member.title}}: <span class="member-name" [ngClass]="{removed: member.change}">{{member.name}}</span>
+      <span *ngIf="member.change">
+        <span class="addendum">replaced by </span> {{member.change.newName || 'no one'}} <span class="addendum">after {{member.change.reason}}</span>
+      </span>
+    </li>
   </ul>
 
   <h3>~ Our Mission Statement ~</h3>

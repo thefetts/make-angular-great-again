@@ -3,4 +3,5 @@ interface Member {
   name: string
   leader: boolean
   ordinal?: number
+  change?: PositionChange
 }

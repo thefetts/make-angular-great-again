@@ -1,18 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-
-import { AppComponent } from './app.component';
+import {BrowserModule} from '@angular/platform-browser'
+import {NgModule} from '@angular/core'
+import {MagaComponent} from './maga.component'
+import {EpisodePickerComponent} from './components/episode-picker.component'
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    MagaComponent,
+    EpisodePickerComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [MagaComponent]
 })
-export class AppModule { }
+export class AppModule {}
