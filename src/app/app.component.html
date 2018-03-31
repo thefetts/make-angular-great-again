@@ -1,18 +1,13 @@
 <div id="container">
   <h1>~ Welcome to the Castle Black! ~</h1>
-  <h4>Greetings from our 998th Lord Commander Jon Snow</h4>
+  <h4>Greetings from our {{getLeaderTitle()}}</h4>
 
   <h3>~ Our Home ~</h3>
   <img id="castle" src="assets/castleblack.jpg"/>
 
   <h3>~ Our Team ~</h3>
   <ul>
-    <li>Lord Commander: Jon Snow</li>
-    <li>Maester: Aemon Targaryen</li>
-    <li>First Ranger: Benjen Stark</li>
-    <li>First Steward: Bowen Marsh</li>
-    <li>Master-at-arms: Ser Alliser Thorne</li>
-    <li>First Builder: Othell Yarwyck</li>
+    <li *ngFor="let member of roster">{{member.title}}: {{member.name}}</li>
   </ul>
 
   <h3>~ Our Mission Statement ~</h3>
